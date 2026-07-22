@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeFuel — Your kitchen, on autopilot</title>
+  <meta name="description" content="HomeFuel turns your kitchen inventory into tonight's dinner and this week's plan — so nothing spoils and your macros log themselves. Coming soon to iPhone." />
+  <meta property="og:title" content="HomeFuel — Your kitchen, on autopilot" />
+  <meta property="og:description" content="Track what you own, cook what's about to expire, plan the week in one tap. Nutrition logs itself." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236f3df0'/%3E%3Cpath d='M32 12c5 6 9 10 9 16a9 9 0 0 1-18 0c0-6 4-10 9-16z' fill='%23ffd257'/%3E%3Crect x='20' y='40' width='24' height='6' rx='3' fill='%23fff'/%3E%3Crect x='24' y='50' width='16' height='5' rx='2.5' fill='%23ffffffaa'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c2.6 3 4.6 5.2 4.6 8.1a4.6 4.6 0 0 1-9.2 0C7.4 8.2 9.4 6 12 3z" fill="#ffd257"/>
+            <rect x="6.5" y="16.6" width="11" height="2.5" rx="1.25" fill="#fff"/>
+            <rect x="8.5" y="20.2" width="7" height="1.9" rx="0.95" fill="#ffffffb3"/>
+          </svg>
+        </span>
+        HomeFuel
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#tutorial">How it works</a>
+        <a href="#plans">Plans</a>
+        <a class="nav-cta" href="#download">Get the app</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-wash" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow tint">Meet HomeFuel</p>
+        <h1 class="h-display">Your kitchen,<br /><span class="grad">on autopilot.</span></h1>
+        <p class="lede">HomeFuel tracks what you own, rescues what's about to
+          expire, plans your whole week in one tap — and the nutrition log
+          fills itself from what you cook.</p>
+
+        <div class="store-row">
+          <!-- TODO: replace href="#download" with the real App Store URL at launch -->
+          <a class="store-badge" href="#download" aria-label="Download on the App Store (coming soon)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.05 12.54c-.03-2.44 1.99-3.61 2.08-3.67-1.13-1.66-2.9-1.89-3.53-1.91-1.5-.15-2.93.88-3.69.88-.76 0-1.94-.86-3.19-.84-1.64.02-3.15.95-4 2.42-1.7 2.95-.43 7.32 1.23 9.71.81 1.17 1.78 2.49 3.05 2.44 1.22-.05 1.69-.79 3.17-.79 1.48 0 1.9.79 3.19.77 1.32-.02 2.15-1.2 2.96-2.38.93-1.36 1.31-2.68 1.33-2.75-.03-.01-2.56-.98-2.6-3.88zM14.62 5.4c.67-.81 1.12-1.94 1-3.07-.96.04-2.14.64-2.83 1.45-.62.72-1.17 1.87-1.02 2.97 1.07.08 2.17-.54 2.85-1.35z"/>
+            </svg>
+            <span class="sb-text">
+              <span class="sb-top">Coming soon on the</span><br />
+              <span class="sb-bottom">App Store</span>
+            </span>
+          </a>
+          <span class="store-badge android" aria-label="Android version in development">
+            <span class="dev-chip">IN DEVELOPMENT</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.5 9.5h11V17a1.8 1.8 0 0 1-1.8 1.8h-.5v2.5a1.2 1.2 0 1 1-2.4 0v-2.5h-1.6v2.5a1.2 1.2 0 1 1-2.4 0v-2.5h-.5A1.8 1.8 0 0 1 6.5 17V9.5zM4.2 9.7a1.2 1.2 0 0 1 1.2 1.2v4.4a1.2 1.2 0 1 1-2.4 0v-4.4a1.2 1.2 0 0 1 1.2-1.2zm15.6 0a1.2 1.2 0 0 1 1.2 1.2v4.4a1.2 1.2 0 1 1-2.4 0v-4.4a1.2 1.2 0 0 1 1.2-1.2zM15.9 3.6l1-1.5a.3.3 0 0 0-.5-.33l-1.03 1.55a6.6 6.6 0 0 0-4.74 0L9.6 1.77a.3.3 0 0 0-.5.33l1 1.5A5.4 5.4 0 0 0 6.5 8.6h11a5.4 5.4 0 0 0-2.6-5zm-5.4 3a.6.6 0 1 1 0-1.2.6.6 0 0 1 0 1.2zm3 0a.6.6 0 1 1 0-1.2.6.6 0 0 1 0 1.2z"/>
+            </svg>
+            <span class="sb-text">
+              <span class="sb-top">Android</span><br />
+              <span class="sb-bottom">Soon</span>
+            </span>
+          </span>
+        </div>
+
+        <div class="hero-props">
+          <span class="hero-prop"><i class="dot" style="background:var(--fresh)"></i>Free to start</span>
+          <span class="hero-prop"><i class="dot" style="background:var(--accent)"></i>526 goal-aware dishes</span>
+          <span class="hero-prop"><i class="dot" style="background:var(--move)"></i>Works with Apple Health</span>
+        </div>
+      </div>
+
+      <!-- Hero phone — the Home view, redrawn in CSS -->
+      <div class="hero-phone-zone reveal">
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="island"></div>
+            <div class="m-status">
+              <span>21:43</span>
+              <span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i></span>
+            </div>
+            <div class="m-greeting">
+              <div class="m-goalchip">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="3"/><path d="M9 10h6l-1 11h-4z"/></svg>
+                WEIGHT LOSS
+              </div>
+              <h4>Good night,<br />Emma</h4>
+              <div class="sub">✦ 1 thing to sort today</div>
+            </div>
+            <div class="m-banner">
+              <span class="avatar">EM</span>
+              <span><b>Review your kitchen</b><span>1 new item from your trip</span></span>
+              <span class="chev">›</span>
+            </div>
+            <div class="m-meal">
+              <span class="cook-chip">☾ &nbsp;COOK NEXT · 7 PM</span>
+              <div>
+                <h5>Chicken Teriyaki Bowl</h5>
+                <div class="meta">473 kcal · ready when you are</div>
+              </div>
+            </div>
+            <div class="m-today">
+              <span class="t-eyebrow">✦ TODAY</span>
+              <span class="pct">92<small>%</small></span>
+              <div class="m-rings">
+                <svg class="rings-svg" width="86" height="86" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="gEat" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#7a3df0"/><stop offset="1" stop-color="#a16bff"/>
+                    </linearGradient>
+                    <linearGradient id="gFuel" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#f0980f"/><stop offset="1" stop-color="#ffc93d"/>
+                    </linearGradient>
+                    <linearGradient id="gMove" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#ff375f"/><stop offset="1" stop-color="#ff7a59"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="track" cx="50" cy="50" r="42" fill="none" stroke="#ece4f8" stroke-width="9"/>
+                  <circle class="prog" data-frac="0.92" cx="50" cy="50" r="42" fill="none" stroke="url(#gEat)" stroke-width="9"/>
+                  <circle class="track" cx="50" cy="50" r="30" fill="none" stroke="#f6ecd8" stroke-width="9"/>
+                  <circle class="prog" data-frac="1" cx="50" cy="50" r="30" fill="none" stroke="url(#gFuel)" stroke-width="9"/>
+                  <circle class="track" cx="50" cy="50" r="18" fill="none" stroke="#fbe3e8" stroke-width="9"/>
+                  <circle class="prog" data-frac="1" cx="50" cy="50" r="18" fill="none" stroke="url(#gMove)" stroke-width="9"/>
+                </svg>
+              </div>
+              <span class="pace">Good pace</span>
+              <span class="closed-chip">✓ RINGS CLOSED</span>
+              <div class="m-bars">
+                <div class="m-bar"><b>FUEL <i>1655</i></b><div class="track"><div class="fill" style="width:92%;background:linear-gradient(90deg,#e8663c,#f0980f)"></div></div></div>
+                <div class="m-bar"><b>WATER <i>104%</i></b><div class="track"><div class="fill" style="width:100%;background:linear-gradient(90deg,#7a4df0,#a16bff)"></div></div></div>
+                <div class="m-bar"><b>TRAINING <i>3</i></b><div class="track"><div class="fill" style="width:75%;background:linear-gradient(90deg,#2fa361,#58d68d)"></div></div></div>
+              </div>
+            </div>
+            <div class="m-usefirst">
+              <div class="uf-head"><b>♨ USE FIRST · 3 items</b><span>See all →</span></div>
+              <div class="uf-row">
+                <div class="uf-card uf-1"><span class="d">1d</span><em>Salmon</em></div>
+                <div class="uf-card uf-2"><span class="d">2d</span><em>Spinach</em></div>
+                <div class="uf-card uf-3"><span class="d">2d</span><em>Avocado</em></div>
+              </div>
+            </div>
+            <div class="m-tabbar">
+              <span class="m-tab on"><span class="tab-pill"></span>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1v-8.5z"/></svg>
+                Home</span>
+              <span class="m-tab">
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="3" width="14" height="18" rx="2.5"/><rect x="7.5" y="6" width="9" height="1.8" rx="0.9" fill="#f4ede2"/><rect x="7.5" y="10" width="9" height="1.8" rx="0.9" fill="#f4ede2"/></svg>
+                Kitchen</span>
+              <span class="m-tab">
+                <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><rect x="3.5" y="5" width="17" height="4.4" rx="2.2" fill="#c9baa4"/></svg>
+                Plan</span>
+              <span class="m-tab">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0z"/></svg>
+                Me</span>
+              <span class="m-tab">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 19h16v1.8H4zM5.5 17l4-6 3 3.4L17.5 8l1.4 1.1-5.9 7.6-3-3.4-3.1 4.6z"/></svg>
+                Progress</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="float-chip fc-1">
+          <span class="ic" style="background:linear-gradient(135deg,#ff5f7e,#ff2d55)">♨</span>
+          <span>Salmon expires tomorrow<small>Rescue dinner suggested</small></span>
+        </div>
+        <div class="float-chip fc-2">
+          <span class="ic" style="background:linear-gradient(135deg,#58d68d,#2fa361)">✓</span>
+          <span>Dinner logged itself<small>440 kcal · 34 g protein</small></span>
+        </div>
+        <div class="float-chip fc-3">
+          <span class="ic" style="background:linear-gradient(135deg,#8a5cf5,#6f3df0)">7</span>
+          <span>Week planned in one tap<small>Weekly Systems</small></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STATS STRIP ============ -->
+  <section class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item reveal"><b>526</b><span>goal-aware dishes</span></div>
+      <div class="strip-item reveal"><b>4-way</b><span>swipe kitchen check</span></div>
+      <div class="strip-item reveal"><b>1 tap</b><span>fills the whole week</span></div>
+      <div class="strip-item reveal"><b>0</b><span>manual macro entries</span></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow tint">Why HomeFuel</p>
+        <h2 class="h-section">Every other app does one slice.<br />This is the whole loop.</h2>
+        <p class="lede">Inventory apps don't cook. Meal planners don't know
+          what's in your fridge. Calorie trackers make you type. HomeFuel
+          connects all of it.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#6691bc,#3f6f9e)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><rect x="7.5" y="6" width="9" height="2" rx="1" fill="#f4ede2"/><rect x="7.5" y="10.5" width="9" height="2" rx="1" fill="#f4ede2"/><rect x="7.5" y="15" width="5" height="2" rx="1" fill="#f4ede2"/></svg>
+          </div>
+          <h3>A kitchen that knows itself</h3>
+          <p>Fridge, freezer, pantry — every item tracked with expiry
+            urgency. After shopping, one tap puts the whole trip away.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#58d68d,#2fa361)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm2.2 9.3 2 2 5-5-1.4-1.4-3.6 3.6-.6-.6z"/></svg>
+          </div>
+          <h3>The 30-second daily check</h3>
+          <p>Swipe through what's expiring: still here, used up, trash it,
+            buy more. Your inventory stays honest with zero typing.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#ff6b57,#e8442e)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3.5 4 6.2 6.9 6.2 10.6a6.2 6.2 0 0 1-12.4 0C5.8 8.9 8.5 6 12 2zm0 15.5a3 3 0 0 0 3-3c0-1.6-1.3-3-3-4.8-1.7 1.8-3 3.2-3 4.8a3 3 0 0 0 3 3z"/></svg>
+          </div>
+          <h3>Rescue meals</h3>
+          <p>Use-first recipes built from exactly what's about to die in
+            your fridge — from a 526-dish catalog tuned to your goal.</p>
+        </div>
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#8a5cf5,#6f3df0)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><rect x="3" y="4.5" width="18" height="5" rx="2.5" fill="#c8b5f7"/><rect x="6.5" y="12.5" width="4" height="2" rx="1" fill="#f4ede2"/><rect x="13.5" y="12.5" width="4" height="2" rx="1" fill="#f4ede2"/><rect x="6.5" y="16.5" width="4" height="2" rx="1" fill="#f4ede2"/></svg>
+          </div>
+          <h3>Weekly Systems</h3>
+          <p>Whole-week meal plans — cut, maintain, or fuel a training
+            block — filled in one tap and priced against your kitchen.</p>
+          <span class="tier-tag plus">★ PLUS</span>
+        </div>
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#ffc93d,#f0980f)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5 14.6 8l6 .6-4.5 4 1.3 5.9L12 15.4l-5.4 3.1L7.9 12.6l-4.5-4 6-.6z"/></svg>
+          </div>
+          <h3>Macros that log themselves</h3>
+          <p>Cook a HomeFuel dish and calories, protein, carbs and fat land
+            in your day automatically. No barcode, no search, no typing.</p>
+          <span class="tier-tag pro">♛ PRO</span>
+        </div>
+        <div class="feature reveal">
+          <div class="f-ic" style="background:linear-gradient(135deg,#ff5f7e,#ff2d55)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.9-9.3-9.6C1.2 7.6 3.6 4.5 6.9 4.5c2 0 3.7 1.1 5.1 2.9 1.4-1.8 3.1-2.9 5.1-2.9 3.3 0 5.7 3.1 4.2 6.9C19.5 16.1 12 21 12 21z"/></svg>
+          </div>
+          <h3>Health, both directions</h3>
+          <p>Workouts and weight sync with Apple Health; logged training
+            estimates its burn and feeds your Move ring — no double counts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TUTORIAL ============ -->
+  <section class="tutorial section" id="tutorial">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow fresh">How it works</p>
+        <h2 class="h-section">Four habits. About two minutes a day.</h2>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step reveal">
+        <div class="step-copy">
+          <span class="step-num" style="background:linear-gradient(135deg,#6691bc,#3f6f9e)">1</span>
+          <h3>Put your trip away</h3>
+          <p>Come home from the store, open HomeFuel, and file the whole
+            trip in one screen. Every item lands in its space — Fridge,
+            Freezer, Pantry — with an expiry countdown already running.
+            Shopped twice before putting away? Trips merge automatically.</p>
+        </div>
+        <div class="step-visual">
+          <div class="mini-card">
+            <div class="mini-head"><b>PUT YOUR TRIP AWAY</b><span class="count-pill">6</span></div>
+            <div class="pa-row">
+              <span class="pa-thumb" style="background:radial-gradient(26px 18px at 60% 35%,#ffb28c,transparent 72%),linear-gradient(150deg,#ee7a52,#a03a22)"></span>
+              <span class="pa-name">Salmon<small>2 fillets</small></span>
+              <span class="space-chip sp-fridge">FRIDGE</span>
+            </div>
+            <div class="pa-row">
+              <span class="pa-thumb" style="background:radial-gradient(26px 18px at 45% 30%,#b8e6a0,transparent 72%),linear-gradient(150deg,#4c9948,#1d5c2e)"></span>
+              <span class="pa-name">Spinach<small>1 bag</small></span>
+              <span class="space-chip sp-fridge">FRIDGE</span>
+            </div>
+            <div class="pa-row">
+              <span class="pa-thumb" style="background:radial-gradient(26px 18px at 55% 35%,#cfe8f6,transparent 72%),linear-gradient(150deg,#7fb2d4,#44708f)"></span>
+              <span class="pa-name">Shrimp<small>1 pack</small></span>
+              <span class="space-chip sp-freezer">FREEZER</span>
+            </div>
+            <div class="pa-row">
+              <span class="pa-thumb" style="background:radial-gradient(26px 18px at 55% 30%,#ffe9a8,transparent 72%),linear-gradient(150deg,#d8a133,#8a5c14)"></span>
+              <span class="pa-name">Brown Rice<small>1 kg</small></span>
+              <span class="space-chip sp-pantry">PANTRY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step reveal">
+        <div class="step-copy">
+          <span class="step-num" style="background:linear-gradient(135deg,#58d68d,#2fa361)">2</span>
+          <h3>Swipe the daily check</h3>
+          <p>A 30-second card deck of everything that needs a decision.
+            Four swipes keep your kitchen honest — and anything marked
+            "buy more" goes straight to the shopping list.</p>
+          <div class="swipe-legend">
+            <span class="sl-keep">→ STILL HERE</span>
+            <span class="sl-used">↓ USED UP</span>
+            <span class="sl-trash">← TRASH IT</span>
+            <span class="sl-buy">↑ BUY MORE</span>
+          </div>
+        </div>
+        <div class="step-visual">
+          <div class="deck">
+            <div class="deck-card back-2"></div>
+            <div class="deck-card back-1"></div>
+            <div class="deck-card front">
+              <div class="deck-photo"><span class="deck-stamp">STILL HERE</span></div>
+              <div class="deck-body">
+                <h4>Salmon</h4>
+                <div class="deck-meta">Fridge · 2 fillets</div>
+                <span class="deck-days">EXPIRES TOMORROW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step reveal">
+        <div class="step-copy">
+          <span class="step-num" style="background:linear-gradient(135deg,#8a5cf5,#6f3df0)">3</span>
+          <h3>Cook the rescue, plan the week</h3>
+          <p>Tonight's dinner starts from what's expiring. The rest of the
+            week fills itself with one tap — breakfast to dinner, matched
+            to your goal and to what's already in the kitchen.</p>
+        </div>
+        <div class="step-visual">
+          <div class="mini-card">
+            <div class="mini-head"><b>TUESDAY</b><span style="font-size:11px;font-weight:900;color:var(--ink-3)">1,520 kcal planned</span></div>
+            <div class="plan-row">
+              <span class="plan-slot" style="background:linear-gradient(135deg,#ffc93d,#f0980f)">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 4a5 5 0 0 1 5 5h-10a5 5 0 0 1 5-5zM3 11h18v2H3zM12 2v1.5M5 5l1 1M19 5l-1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+              <span class="plan-name">Overnight Oats &amp; Berries<small>Breakfast</small></span>
+              <span class="plan-kcal">420</span>
+            </div>
+            <div class="plan-row">
+              <span class="plan-slot" style="background:linear-gradient(135deg,#7fb2d4,#44708f)">
+                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+              <span class="plan-name">Salmon Poke Bowl<small>Lunch</small></span>
+              <span class="plan-kcal">560</span>
+            </div>
+            <div class="plan-row">
+              <span class="plan-slot" style="background:linear-gradient(135deg,#8a5cf5,#6f3df0)">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 13.5A8.5 8.5 0 0 1 10.5 4 8.5 8.5 0 1 0 20 13.5z"/></svg>
+              </span>
+              <span class="plan-name">Turkey Meatballs &amp; Zoodles<small>Dinner · rescue pick</small></span>
+              <span class="plan-kcal">540</span>
+            </div>
+            <button class="autofill-btn" type="button" tabindex="-1">✦ &nbsp;Auto-fill the week</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step reveal">
+        <div class="step-copy">
+          <span class="step-num" style="background:linear-gradient(135deg,#ff5f7e,#ff2d55)">4</span>
+          <h3>Watch the rings close</h3>
+          <p>Eat, Fuel, Move — three rings with an honest verdict. Cooking
+            logs your calories and macros automatically, manual workouts
+            estimate their burn, and Apple Health fills in the rest.</p>
+        </div>
+        <div class="step-visual">
+          <div class="mini-card" style="display:flex;align-items:center;gap:18px">
+            <svg class="rings-svg" width="120" height="120" viewBox="0 0 100 100">
+              <circle class="track" cx="50" cy="50" r="42" fill="none" stroke="#ece4f8" stroke-width="9"/>
+              <circle class="prog" data-frac="0.92" cx="50" cy="50" r="42" fill="none" stroke="url(#gEat)" stroke-width="9"/>
+              <circle class="track" cx="50" cy="50" r="30" fill="none" stroke="#f6ecd8" stroke-width="9"/>
+              <circle class="prog" data-frac="1" cx="50" cy="50" r="30" fill="none" stroke="url(#gFuel)" stroke-width="9"/>
+              <circle class="track" cx="50" cy="50" r="18" fill="none" stroke="#fbe3e8" stroke-width="9"/>
+              <circle class="prog" data-frac="1" cx="50" cy="50" r="18" fill="none" stroke="url(#gMove)" stroke-width="9"/>
+            </svg>
+            <div style="display:grid;gap:9px">
+              <div style="font-size:13px;font-weight:900"><span style="color:#7a4df0">●</span> Eat · 1,655 / 1,800</div>
+              <div style="font-size:13px;font-weight:900"><span style="color:#f0980f">●</span> Fuel · 126 g protein</div>
+              <div style="font-size:13px;font-weight:900"><span style="color:#ff2d55">●</span> Move · 693 kcal</div>
+              <span class="closed-chip" style="display:inline-flex;align-items:center;gap:4px;background:var(--fresh-soft);color:var(--fresh);font-size:9.5px;font-weight:900;letter-spacing:.08em;padding:4px 9px;border-radius:999px;justify-self:start">✓ DAY CLOSED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DARK RINGS BAND ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="night reveal">
+        <div class="night-inner">
+          <div>
+            <p class="eyebrow">The energy engine</p>
+            <h2 class="h-section">An honest day,<br />in three rings.</h2>
+            <p class="lede">Overeating never closes a ring here. A day only
+              counts when calories land in your goal's band, protein hits
+              target, and you actually moved.</p>
+            <div class="night-legend">
+              <div class="nl-item"><span class="nl-dot" style="background:linear-gradient(135deg,#7a3df0,#a16bff)"></span>Eat <small>&nbsp;— calories inside your budget band</small></div>
+              <div class="nl-item"><span class="nl-dot" style="background:linear-gradient(135deg,#f0980f,#ffc93d)"></span>Fuel <small>&nbsp;— protein at 100% of target</small></div>
+              <div class="nl-item"><span class="nl-dot" style="background:linear-gradient(135deg,#ff375f,#ff7a59)"></span>Move <small>&nbsp;— active energy at your goal</small></div>
+            </div>
+            <div class="verdict-row">
+              <span class="verdict v-closed">✓ DAY CLOSED</span>
+              <span class="verdict v-over">OVER BUDGET</span>
+              <span class="verdict v-partial">IN PROGRESS</span>
+            </div>
+          </div>
+          <div class="big-rings-zone">
+            <svg class="rings-svg" width="300" height="300" viewBox="0 0 100 100">
+              <circle class="track" cx="50" cy="50" r="42" fill="none" stroke="#231b36" stroke-width="8.4"/>
+              <circle class="prog" data-frac="0.92" cx="50" cy="50" r="42" fill="none" stroke="url(#gEat)" stroke-width="8.4"/>
+              <circle class="track" cx="50" cy="50" r="31" fill="none" stroke="#2e2410" stroke-width="8.4"/>
+              <circle class="prog" data-frac="1" cx="50" cy="50" r="31" fill="none" stroke="url(#gFuel)" stroke-width="8.4"/>
+              <circle class="track" cx="50" cy="50" r="20" fill="none" stroke="#361318" stroke-width="8.4"/>
+              <circle class="prog" data-frac="1" cx="50" cy="50" r="20" fill="none" stroke="url(#gMove)" stroke-width="8.4"/>
+            </svg>
+            <div class="hk-chip">
+              <span class="hk-ic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.9-9.3-9.6C1.2 7.6 3.6 4.5 6.9 4.5c2 0 3.7 1.1 5.1 2.9 1.4-1.8 3.1-2.9 5.1-2.9 3.3 0 5.7 3.1 4.2 6.9C19.5 16.1 12 21 12 21z"/></svg>
+              </span>
+              <span>Apple Health<small>Two-way sync</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLANS ============ -->
+  <section class="section" id="plans">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow tint">Plans</p>
+        <h2 class="h-section">Start free. Upgrade when<br />the kitchen outgrows it.</h2>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card reveal">
+          <span class="tier-badge tb-free">FREE</span>
+          <div class="price">$0</div>
+          <div class="price-note">forever</div>
+          <ul>
+            <li><span class="tick">✓</span>35 tracked items · 3 spaces</li>
+            <li><span class="tick">✓</span>Daily kitchen check</li>
+            <li><span class="tick">✓</span>Basic meals + shopping list</li>
+            <li><span class="tick">✓</span>Calorie &amp; water logging</li>
+          </ul>
+        </div>
+        <div class="plan-card featured reveal">
+          <span class="tier-badge tb-plus">★ PLUS</span>
+          <div class="price">$3.99<small> /mo</small></div>
+          <div class="price-note">or $24.99/yr · 7-day free trial</div>
+          <ul>
+            <li><span class="tick">✓</span>55 items · extra space · +1 member</li>
+            <li><span class="tick">✓</span>Weekly Systems — one-tap week plans</li>
+            <li><span class="tick">✓</span>Smart notifications</li>
+            <li><span class="tick">✓</span>Everything in Free</li>
+          </ul>
+        </div>
+        <div class="plan-card reveal">
+          <span class="tier-badge tb-pro">♛ PRO</span>
+          <div class="price">$8.99<small> /mo</small></div>
+          <div class="price-note">or $49.99/yr · 7-day free trial</div>
+          <ul>
+            <li><span class="tick">✓</span>Unlimited items, spaces &amp; family</li>
+            <li><span class="tick">✓</span>Full macros on every meal</li>
+            <li><span class="tick">✓</span>Energy engine + progress coach</li>
+            <li><span class="tick">✓</span>Performance catalog &amp; boosters</li>
+          </ul>
+        </div>
+      </div>
+      <p class="plans-note">Prices shown for the US storefront — final pricing appears on the App Store.</p>
+    </div>
+  </section>
+
+  <!-- ============ DOWNLOAD CTA ============ -->
+  <section class="section" id="download">
+    <div class="wrap">
+      <div class="cta-card reveal">
+        <p class="eyebrow">Launching soon</p>
+        <h2 class="h-section">Nothing spoils.<br />Dinner's decided.</h2>
+        <p class="lede">HomeFuel is in the final stretch before its App
+          Store debut. The Android build is on the bench next.</p>
+        <div class="store-row">
+          <!-- TODO: replace href with the real App Store URL at launch -->
+          <a class="store-badge" href="#" aria-label="Download on the App Store (link coming at launch)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.05 12.54c-.03-2.44 1.99-3.61 2.08-3.67-1.13-1.66-2.9-1.89-3.53-1.91-1.5-.15-2.93.88-3.69.88-.76 0-1.94-.86-3.19-.84-1.64.02-3.15.95-4 2.42-1.7 2.95-.43 7.32 1.23 9.71.81 1.17 1.78 2.49 3.05 2.44 1.22-.05 1.69-.79 3.17-.79 1.48 0 1.9.79 3.19.77 1.32-.02 2.15-1.2 2.96-2.38.93-1.36 1.31-2.68 1.33-2.75-.03-.01-2.56-.98-2.6-3.88zM14.62 5.4c.67-.81 1.12-1.94 1-3.07-.96.04-2.14.64-2.83 1.45-.62.72-1.17 1.87-1.02 2.97 1.07.08 2.17-.54 2.85-1.35z"/>
+            </svg>
+            <span class="sb-text">
+              <span class="sb-top">Coming soon on the</span><br />
+              <span class="sb-bottom">App Store</span>
+            </span>
+          </a>
+          <span class="store-badge android" aria-label="Android version in development">
+            <span class="dev-chip">IN DEVELOPMENT</span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.5 9.5h11V17a1.8 1.8 0 0 1-1.8 1.8h-.5v2.5a1.2 1.2 0 1 1-2.4 0v-2.5h-1.6v2.5a1.2 1.2 0 1 1-2.4 0v-2.5h-.5A1.8 1.8 0 0 1 6.5 17V9.5zM4.2 9.7a1.2 1.2 0 0 1 1.2 1.2v4.4a1.2 1.2 0 1 1-2.4 0v-4.4a1.2 1.2 0 0 1 1.2-1.2zm15.6 0a1.2 1.2 0 0 1 1.2 1.2v4.4a1.2 1.2 0 1 1-2.4 0v-4.4a1.2 1.2 0 0 1 1.2-1.2zM15.9 3.6l1-1.5a.3.3 0 0 0-.5-.33l-1.03 1.55a6.6 6.6 0 0 0-4.74 0L9.6 1.77a.3.3 0 0 0-.5.33l1 1.5A5.4 5.4 0 0 0 6.5 8.6h11a5.4 5.4 0 0 0-2.6-5zm-5.4 3a.6.6 0 1 1 0-1.2.6.6 0 0 1 0 1.2zm3 0a.6.6 0 1 1 0-1.2.6.6 0 0 1 0 1.2z"/>
+            </svg>
+            <span class="sb-text">
+              <span class="sb-top">Android</span><br />
+              <span class="sb-bottom">Soon</span>
+            </span>
+          </span>
+        </div>
+        <p class="cta-foot">iOS 17+ · Free to start · Family sharing built in</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3c2.6 3 4.6 5.2 4.6 8.1a4.6 4.6 0 0 1-9.2 0C7.4 8.2 9.4 6 12 3z" fill="#ffd257"/>
+            <rect x="6.5" y="16.6" width="11" height="2.5" rx="1.25" fill="#fff"/>
+            <rect x="8.5" y="20.2" width="7" height="1.9" rx="0.95" fill="#ffffffb3"/>
+          </svg>
+        </span>
+        HomeFuel
+      </a>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#tutorial">How it works</a>
+        <a href="#plans">Plans</a>
+        <a href="mailto:hello@homefuel.app">Contact</a>
+      </div>
+      <p class="footer-copy">© <span id="year">2026</span> HomeFuel. Privacy policy and terms coming with launch. Apple, the Apple logo and App Store are trademarks of Apple Inc. Android is a trademark of Google LLC.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
