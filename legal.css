@@ -257,7 +257,7 @@
 
 .legal-footer .brand { font-size: 16px; }
 .legal-footer .brand-mark { width: 28px; height: 28px; border-radius: 8px; }
-.legal-footer .brand-mark svg { width: 15px; height: 15px; }
+.legal-footer .brand-mark img { width: 100%; height: 100%; }
 
 .legal-footer-links {
   display: flex;
