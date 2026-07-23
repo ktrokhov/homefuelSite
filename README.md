@@ -1,6 +1,7 @@
 # HomeFuel — marketing site
 
-Static site, no build step. Three files: `index.html`, `styles.css`, `script.js`.
+Static site, no build step. The home page is `index.html`; the legal pages are
+`privacy.html` and `terms.html`.
 
 ## Run locally
 Just open `index.html` in a browser, or:
@@ -13,9 +14,14 @@ cd website && python3 -m http.server 8080
 - **Cloudflare Pages / Vercel / Netlify** — drag the `website/` folder in, done.
 - **GitHub Pages** — push the folder to a repo, enable Pages on the root.
 
-## At launch — two edits
-1. **App Store link:** search `index.html` for `TODO: replace href` (2 places — hero + download section) and paste the real App Store URL.
-2. Change both badges' small text from "Coming soon on the" to "Download on the" — and consider swapping the drawn badge for Apple's official artwork from [Apple Marketing Tools](https://tools.applemediaservices.com/app-store).
+## App Store
+Both download calls to action use Apple's official badge artwork and link to the
+HomeFuel product page on the App Store.
+
+## Legal pages
+- `privacy.html` — browser-readable Privacy Policy with a PDF download
+- `terms.html` — browser-readable Terms & Conditions with a PDF download
+- `assets/legal/` — downloadable PDF copies
 
 ## Android
 The Android badge is intentionally a non-clickable "IN DEVELOPMENT" chip.
